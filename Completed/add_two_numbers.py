@@ -3,6 +3,7 @@ You are given two non-empty linked lists representing two non-negative integers.
 You may assume the two numbers do not contain any leading zero, except the number 0 itself.
 """
 
+
 # Definition for singly-linked list.
 class ListNode:
     def __init__(self, x):
@@ -41,7 +42,7 @@ class Solution:
 
 
 if (__name__ == "__main__"):
-    l1 = ListNode(2)
+    l1 = ListNode(3)
     l1.next = ListNode(4)
     l1.next.next = ListNode(3)
 
@@ -53,5 +54,5 @@ if (__name__ == "__main__"):
     list = obj.addTwoNumbers(l1, l2)
 
     while (list != None):
-        print(list.val)
+        print(list.val, end='')
         list = list.next

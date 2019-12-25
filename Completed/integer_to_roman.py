@@ -24,10 +24,24 @@ class Solution:
     def intToRoman(self, num: int) -> str:
         dict = {1: "I", 4: "IV", 5: "V", 9: "IX", 10: "X", 40: "XL", 50: "L", 90: "XC", 100: "C", 400: "CD", 500: "D",
                 900: "CM", 1000: "M"}
+        num_list = dict.keys()
+        num_list = sorted(num_list)
+        roman = ""
+        index = len(num_list) - 1
+        while (num > 0):
+            found = False
+            while (not found):
+                if (num_list[index] <= num):
+                    found = True
+                else:
+                    index -= 1
+            roman += dict[num_list[index]]
+            num -= num_list[index]
+        return roman
 
 
 if (__name__ == "__main__"):
-    integer = "3"
+    integer = 1994
     # MCMXCIV
     obj = Solution()
     print("Integer {} converted to roman : {}".format(integer, obj.intToRoman(integer)))
